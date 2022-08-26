@@ -1,0 +1,23 @@
+[Distribution]
+Distribution=arch
+
+[Output]
+Format=gpt_btrfs
+ImageId=arch_osi
+Bootable=yes
+Verity=yes
+Minimize=yes
+Compress=zstd
+UsrOnly=yes
+
+# debug
+KernelCommandLine=systemd.debug-shell=1 rd.timeout=15
+Password=foo
+
+# implicit
+ReadOnly=yes
+BootProtocol=uefi
+
+[Content]
+BasePackages=yes
+Packages = btrfs-progs
